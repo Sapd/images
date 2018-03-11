@@ -8,7 +8,8 @@ FROM        frolvlad/alpine-mono
 MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
 
 RUN         apk update \
-            && apk add --no-cache openssl curl sqlite libgdiplus \
+            && apk add --no-cache openssl curl sqlite \
+            && apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ libgdiplus \ 
             && adduser -D -h /home/container container
 
 USER        container
